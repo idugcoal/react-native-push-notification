@@ -208,7 +208,7 @@ Notifications._onRemoteFetch = function(notificationData: Object) {
 };
 
 Notifications._onNotification = function(data, isFromBackground = null) {
-	console.log('data in _onNotification', data, isFromBackground )
+	AlertIOS.alert('data in _onNotification', data, isFromBackground )
 	if ( isFromBackground === null ) {
 		isFromBackground = (
 			data.foreground === false ||
@@ -228,6 +228,7 @@ Notifications._onNotification = function(data, isFromBackground = null) {
 				sound: data.getSound(),
   			finish: (res) => data.finish(res)
 			});
+			AlertIOS.alert('this.onNotification', this.onNotification)
 		} else {
 			var notificationData = {
 				foreground: ! isFromBackground,

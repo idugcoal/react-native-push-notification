@@ -2,7 +2,8 @@
 
 import {
   AppState,
-  PushNotificationIOS
+  PushNotificationIOS,
+  AlertIOS
 } from 'react-native';
 
 module.exports = {
